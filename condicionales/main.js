@@ -144,7 +144,7 @@ if ((nombre_clave === nombre_cliente) || (pase === "vip")) {
 
     if (utilizar_entrada) {
         alert("BIENVENIDO")
-    
+
     } else {
         comprar_entrada()
     }
@@ -194,10 +194,33 @@ if (edad <= 12) {
 
 /* Ejercicio 10 */
 
+let opciones = ["piedra", "papel", "tijera"]
+
+function anticheat(jugador,opciones) {
+    hace_trampa = true
+    for (let i = 0; i < 3; i++) {
+        if (jugador === opciones[i]) {
+            console.log(opciones[i])
+            hace_trampa = false
+            break
+        }
+    }
+    return hace_trampa
+}
+
 let jugador1 = prompt("JUGADOR 1: Elige: piedra, papel o tijera").toLowerCase()
 let jugador2 = prompt("JUGADOR 2: Elige: piedra, papel o tijera").toLowerCase()
 
-if (jugador1 === jugador2) {
+if (anticheat(jugador1,opciones) && anticheat(jugador2,opciones)) {
+    alert("Ambos hacen trampa")
+
+}else if (anticheat(jugador1,opciones)) {
+    alert("Jugador 1 hace trampa")
+
+}else if (anticheat(jugador2,opciones)) {
+    alert("Jugador 2 hace trampa")
+
+}else if (jugador1 === jugador2) {
     alert("Empate")
 } else if ((jugador1 === "piedra" && jugador2 === "tijera") || (jugador1 === "papel" && jugador2 === "piedra") || (jugador1 === "tijera" && jugador2 === "papel")) {
     alert("Gana jugador 1")
@@ -242,7 +265,7 @@ let operacion = prompt("Ingresa la operación (suma, resta, multiplicación, div
 if (numeroB === 0 && operacion === "división") {
     alert("No se puede dividir por 0")
 } else {
-    switch (numeroA, numeroB,operacion) {
+    switch (numeroA, numeroB, operacion) {
         case "suma":
             alert("Resultado: " + (numeroA + numeroB))
             break
