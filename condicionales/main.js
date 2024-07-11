@@ -112,10 +112,10 @@ if ((conductor.vision >= 8) && (conductor.edad >= 18) && (conductor.altura >= 15
 /* Ejercicio 7 */
 
 function comprar_entrada() {
-    venta_entrada = confirm("Desea comprar una entrada? 1000 USD")
+    let venta_entrada = confirm("Desea comprar una entrada? 1000 USD")
 
     if (venta_entrada) {
-        saldo = parseInt(prompt("Ingresa tu saldo"))
+        let saldo = parseInt(prompt("Ingresa tu saldo"))
 
         if (saldo >= precio_entrada) {
             alert("Compra exitosa, saldo restante: " + (saldo - precio_entrada))
@@ -140,7 +140,7 @@ if ((nombre_clave === nombre_cliente) || (pase === "vip")) {
     alert("BIENVENIDO")
 
 } else if (entrada === "si" || entrada === "s" || entrada === "true") {
-    utilizar_entrada = confirm("¿Desea utilizar su entrada?")
+    let utilizar_entrada = confirm("¿Desea utilizar su entrada?")
 
     if (utilizar_entrada) {
         alert("BIENVENIDO")
@@ -158,7 +158,7 @@ let numeroIncognita = Math.floor(Math.random() * 10) + 1
 let gano = null
 
 for (let i = 0; i < 3; i++) {
-    numeroIngresado = parseInt(prompt("Ingresa un número"))
+    let numeroIngresado = parseInt(prompt("Ingresa un número"))
 
     if (numeroIngresado === numeroIncognita) {
         gano = true
@@ -197,7 +197,7 @@ if (edad <= 12) {
 let opciones = ["piedra", "papel", "tijera"]
 
 function anticheat(jugador,opciones) {
-    hace_trampa = true
+    let hace_trampa = true
     for (let i = 0; i < 3; i++) {
         if (jugador === opciones[i]) {
             console.log(opciones[i])
