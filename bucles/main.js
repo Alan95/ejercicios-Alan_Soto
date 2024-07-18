@@ -1,234 +1,283 @@
 "use strict"
-/* Ejercicio 1 */
+//Para ejecutar los ejercicios, solo llama a la funcion correspondiente
+function ejercicio1() {
+    let numero = parseInt(prompt("Ingresa un numero"))
 
-let numero = parseInt(prompt("Ingresa un numero"))
-
-for (let i = 0; i <= 10; i++) {
-    console.log(`${numero} x ${i} = ${numero * i}`)
+    for (let i = 0; i <= 10; i++) {
+        console.log(`${numero} x ${i} = ${numero * i}`)
+    }
 }
 
-/* Ejercicio 2 */
+/* ---------------------------------------------------------------------------------- */
 
-let acumulador = 0
-numero = 0
+function ejercicio2() {
+    let acumulador = 0
+    let numero = 0
 
-do {
-    numero = parseInt(prompt("Ingresa un numero"))
-    acumulador += numero
-    console.log(acumulador)
-} while (numero !== 0)
+    do {
+        numero = parseInt(prompt("Ingresa un numero"))
+        acumulador += numero
+        console.log(acumulador)
+    } while (numero !== 0)
+}
 
-/* Ejercicio 3 */
+/* ---------------------------------------------------------------------------------- */
 
-let n_secreto = Math.floor(Math.random() * 100) + 1
-let intentos = 0
-n_ingresado = 0
+function ejercicio3() {
+    let n_secreto = Math.floor(Math.random() * 100) + 1
+    let intentos = 0
+    let n_ingresado = 0
 
-do {
-    n_ingresado = parseInt(prompt("Ingresa un numero del 1 al 100:"))
-    intentos++
-    if (n_ingresado < 1 || n_ingresado > 100 || isNaN(n_ingresado)) {
-        alert("El numero debe estar entre 1 y 100")
+    do {
+        n_ingresado = parseInt(prompt("Ingresa un numero del 1 al 100:"))
+        intentos++
+        if (n_ingresado < 1 || n_ingresado > 100 || isNaN(n_ingresado)) {
+            alert("El numero debe estar entre 1 y 100")
 
-    } else if (n_ingresado < n_secreto) {
-        alert("El numero es mayor")
+        } else if (n_ingresado < n_secreto) {
+            alert("El numero es mayor")
 
-    } else if (n_ingresado > n_secreto) {
-        alert("El numero es menor")
+        } else if (n_ingresado > n_secreto) {
+            alert("El numero es menor")
 
-    } else {
-        alert(`FELICITACIONES.\nIntentos: ${intentos}`)
-    }
-} while (n_ingresado !== n_secreto)
+        } else {
+            alert(`FELICITACIONES.\nIntentos: ${intentos}`)
+        }
+    } while (n_ingresado !== n_secreto)
+}
 
-/* Ejercicio 4 */
+/* ---------------------------------------------------------------------------------- */
 
-n_ingresado = parseInt(prompt("Ingresa un numero"))
-let cant_divisores = 1 /* Todo numero es divisible por si mismo y el bucle solo 
+function ejercicio4() {
+    let n_ingresado = parseInt(prompt("Ingresa un numero"))
+    let cant_divisores = 1 /* Todo numero es divisible por si mismo y el bucle solo 
 recorre la mitad del mismo, por eso le sumo 1 a la cantidad de divisores */
 
-for (let i = 1; i <= Math.floor(n_ingresado/2) ; i++) {
+    for (let i = 1; i <= Math.floor(n_ingresado / 2); i++) {
 
-    if (n_ingresado % i === 0) {
-        cant_divisores++
+        if (n_ingresado % i === 0) {
+            cant_divisores++
 
-        if (cant_divisores > 2) {
-            break
+            if (cant_divisores > 2) {
+                break
+            }
+        }
+    }
+
+    if (cant_divisores === 2) {
+        alert("Es primo")
+    } else {
+        alert("No es primo")
+    }
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+function ejercicio5() {
+
+    let n_ingresado = parseInt(prompt("Ingresa un numero"))
+
+    for (let i = 1; i <= n_ingresado; i++) {
+        if (n_ingresado % i === 0) {
+            console.log(i)
         }
     }
 }
 
-if (cant_divisores === 2) {
-    alert("Es primo")
-} else {
-    alert("No es primo")
-}
+/* ---------------------------------------------------------------------------------- */
 
-/* Ejercicio 5 */
+function ejercicio6() {
 
-n_ingresado = parseInt(prompt("Ingresa un numero"))
+    let arr = ["pepe", "juan", "maria", "pedro", "luis", "jose", "ana", "javier", "carlos", "marcos"]
 
-for (let i = 1; i <= n_ingresado; i++) {
-    if (n_ingresado % i === 0) {
-        console.log(i)
-    }
-}
-
-/* Ejercicio 6 */
-
-let arr = ["pepe","juan","maria","pedro","luis","jose","ana","javier","carlos","marcos"]
-
-for (let value of arr) {
-    console.log(value)
-}
-
-/* Ejercicio 7 */
-
-arr = [1,2,3,4,5,6,7,8,9,10]
-
-for (const value of arr) {
-    console.log(value+"\t"+value*2)
-}
-
-/* Ejercicio 8 */
-
-let familia = []
-
-function Persona() {
-    this.nombre = "Pepe"
-    this.apellido = "Picapiedra"
-    this.integrante = "abuelo"
-    this.edad = 120
-
-    return this
-}
-
-for (let i = 0; i < 5; i++) {
-    familia.push(new Persona())
-}
-
-for (const value of familia) {
-    console.log(`Mi nombre es ${value.nombre} ${value.apellido}, soy el ${value.integrante} y tengo ${value.edad} años`)
-}
-
-/* Ejercicio 9 */
-
-arr = [1,2,3,4,5,6,7,8,9,10]
-
-for (const value of arr) {
-    if (value % 2 !== 0) {
+    for (let value of arr) {
         console.log(value)
     }
 }
 
-/* Ejercicio 10 */
+/* ---------------------------------------------------------------------------------- */
 
-let n_ingresado = 0
-let suma_pares = 0
-let suma_impares = 0
+function ejercicio7() {
 
-do {
-    n_ingresado = parseInt(prompt("Ingresa un numero"))
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    if (n_ingresado % 2 === 0) {
-        suma_pares += n_ingresado
-
-    } else if (n_ingresado % 2 !== 0) {
-        suma_impares += n_ingresado
+    for (const value of arr) {
+        console.log(value + "\t" + value * 2)
     }
-} while (n_ingresado !== 0)
-
-console.log(`La suma de los pares es ${suma_pares} y la suma de los impares es ${suma_impares}`)
-
-/* Ejercicio 11 */
-
-arr = []
-
-for (let i = 0; i < 10; i++) {
-    arr.push(Math.floor(Math.random() * 100) + 1)
 }
 
-console.log(Math.max(...arr))
+/* ---------------------------------------------------------------------------------- */
 
-/* Ejercicio 12 */
+function ejercicio8() {
 
-arr = []
+    let familia = []
 
-for (let i = 0; i < 10; i++) {
-    arr.push(Math.floor(Math.random() * 100) + 1)
-}
+    function Persona() {
+        this.nombre = "Pepe"
+        this.apellido = "Picapiedra"
+        this.integrante = "abuelo"
+        this.edad = 120
 
-console.log(Math.min(...arr))
-
-/* Ejercicio 13 */
-
-let nom_jugador1 = prompt("Ingresa tu nombre jugador 1")
-let nom_jugador2 = prompt("Ingresa tu nombre jugador 2")
-let mano_jugador1 = ""
-let mano_jugador2 = ""
-
-do {
-    mano_jugador1 = prompt(`${nom_jugador1} ingresa tu mano`)
-    mano_jugador2 = prompt(`${nom_jugador2} ingresa tu mano`)
-
-    if ((mano_jugador1 === "piedra" && mano_jugador2 === "tijera") || (mano_jugador1 === "papel" && mano_jugador2 === "piedra") || (mano_jugador1 === "tijera" && mano_jugador2 === "papel")) {
-        alert("Gana jugador 1")
-    } else if (mano_jugador1 === mano_jugador2) {
-        alert("Empate, jueguen otra mano")
-    } else {
-        alert("Gana jugador 2")
+        return this
     }
 
-} while (mano_jugador1 === mano_jugador2)
+    for (let i = 0; i < 5; i++) {
+        familia.push(new Persona())
+    }
 
-/* Ejercicio 14 */
-
-let asterisco = []
-let espacio = [" "," "," "," "," "]
-
-for (let i = 0; i < 5; i++) {
-    asterisco.push(" * ")
-    espacio.pop(" ")
-    console.log(...espacio, ...asterisco)
+    for (const value of familia) {
+        console.log(`Mi nombre es ${value.nombre} ${value.apellido}, soy el ${value.integrante} y tengo ${value.edad} años`)
+    }
 }
 
-/* Ejercicio 15 */
+/* ---------------------------------------------------------------------------------- */
 
-asterisco = [" * "," * "," * "," * "," * "," * "]
-espacio = []
+function ejercicio9() {
 
-for (let i = 0; i < 5; i++) {
-    asterisco.pop(" * ")
-    espacio.push(" ")
-    console.log(...espacio, ...asterisco)
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    for (const value of arr) {
+        if (value % 2 !== 0) {
+            console.log(value)
+        }
+    }
 }
 
-/* Ejercicio 16 */
+/* ---------------------------------------------------------------------------------- */
 
-arr = []
-let cant_elementos = 10
-let ordenado = false
+function ejercicio10() {
 
-for (let i = 0; i < cant_elementos; i++) {
-    let n_random = Math.floor(Math.random() * 100) + 1
-    arr.find(element => element === n_random) ? i-- : arr.push(n_random)
+    let n_ingresado = 0
+    let suma_pares = 0
+    let suma_impares = 0
+
+    do {
+        n_ingresado = parseInt(prompt("Ingresa un numero"))
+
+        if (n_ingresado % 2 === 0) {
+            suma_pares += n_ingresado
+
+        } else if (n_ingresado % 2 !== 0) {
+            suma_impares += n_ingresado
+        }
+    } while (n_ingresado !== 0)
+
+    console.log(`La suma de los pares es ${suma_pares} y la suma de los impares es ${suma_impares}`)
 }
 
-function met_burbuja(arr_ordenado) {
-    while (!(ordenado)) {
+/* ---------------------------------------------------------------------------------- */
 
-        let cambios = 0
-        for (let i = 0; i < cant_elementos; i++) {
-            if (arr_ordenado[i] > arr_ordenado[i + 1]) {
-                [arr_ordenado[i], arr_ordenado[i + 1]] = [arr_ordenado[i + 1], arr_ordenado[i]]
-                cambios++
+function ejercicio11() {
+
+    let arr = []
+
+    for (let i = 0; i < 10; i++) {
+        arr.push(Math.floor(Math.random() * 100) + 1)
+    }
+
+    console.log(Math.max(...arr))
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+function ejercicio12() {
+
+    let arr = []
+
+    for (let i = 0; i < 10; i++) {
+        arr.push(Math.floor(Math.random() * 100) + 1)
+    }
+
+    console.log(Math.min(...arr))
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+function ejercicio13() {
+
+    let nom_jugador1 = prompt("Ingresa tu nombre jugador 1")
+    let nom_jugador2 = prompt("Ingresa tu nombre jugador 2")
+    let mano_jugador1 = ""
+    let mano_jugador2 = ""
+
+    do {
+        mano_jugador1 = prompt(`${nom_jugador1} ingresa tu mano`)
+        mano_jugador2 = prompt(`${nom_jugador2} ingresa tu mano`)
+
+        if ((mano_jugador1 === "piedra" && mano_jugador2 === "tijera") || (mano_jugador1 === "papel" && mano_jugador2 === "piedra") || (mano_jugador1 === "tijera" && mano_jugador2 === "papel")) {
+            alert("Gana jugador 1")
+        } else if (mano_jugador1 === mano_jugador2) {
+            alert("Empate, jueguen otra mano")
+        } else {
+            alert("Gana jugador 2")
+        }
+
+    } while (mano_jugador1 === mano_jugador2)
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+function ejercicio14() {
+    let numPisos = 5;
+    for (let i = 0; i < numPisos; i++) {
+        let piso = '';
+        for (let j = 1; j < numPisos - i; j++) {
+            piso = piso + ' ';
+        }
+
+        for (let j = 0; j < i + 1; j++) {
+            piso = piso + ' * ';
+        }
+        console.log(piso);
+    }
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+function ejercicio15() {
+    let numPisos = 5
+    for (let i = 0; i < numPisos; i++) {
+        let piso = ''
+        for (let j = 0; j < i; j++) {
+            piso = piso + ' '
+        }
+
+        for (let j = i; j < numPisos; j++) {
+            piso = piso + ' * '
+        }
+        console.log(piso)
+    }
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+function ejercicio16() {
+
+    let arr = []
+    let cant_elementos = 10
+    let ordenado = false
+
+    for (let i = 0; i < cant_elementos; i++) {
+        let n_random = Math.floor(Math.random() * 100) + 1
+        arr.find(element => element === n_random) ? i-- : arr.push(n_random)
+    }
+
+    function met_burbuja(arr_ordenado) {
+        while (!(ordenado)) {
+
+            let cambios = 0
+            for (let i = 0; i < cant_elementos; i++) {
+                if (arr_ordenado[i] > arr_ordenado[i + 1]) {
+                    [arr_ordenado[i], arr_ordenado[i + 1]] = [arr_ordenado[i + 1], arr_ordenado[i]]
+                    cambios++
+                }
+            }
+            if (cambios === 0) {
+                ordenado = !false
             }
         }
-        if (cambios === 0) {
-            ordenado = !false
-        }
+        return arr_ordenado
     }
-    return arr_ordenado
-}
 
-console.log(...met_burbuja(arr))
+    console.log(...met_burbuja(arr))
+}
