@@ -267,10 +267,12 @@ function ejercicio16() {
     }
 
     function met_burbuja(arr_ordenado) {
+        let cont = 0
         while (!(ordenado)) {
 
             let cambios = 0
-            for (let i = 0; i < cant_elementos - 1; i++) {
+            cont =+ 1
+            for (let i = 0; i < (cant_elementos - cont); i++) {
                 if (arr_ordenado[i] > arr_ordenado[i + 1]) {
                     [arr_ordenado[i], arr_ordenado[i + 1]] = [arr_ordenado[i + 1], arr_ordenado[i]]
                     cambios++
