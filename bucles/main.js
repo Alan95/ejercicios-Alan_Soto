@@ -273,7 +273,7 @@ function ejercicio16() {
                 }
             }
             if (cambios === 0) {
-                ordenado = !false
+                ordenado = true
             }
         }
         return arr_ordenado
