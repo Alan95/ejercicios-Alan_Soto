@@ -270,7 +270,7 @@ function ejercicio16() {
         while (!(ordenado)) {
 
             let cambios = 0
-            for (let i = 0; i < cant_elementos; i++) {
+            for (let i = 0; i < cant_elementos - 1; i++) {
                 if (arr_ordenado[i] > arr_ordenado[i + 1]) {
                     [arr_ordenado[i], arr_ordenado[i + 1]] = [arr_ordenado[i + 1], arr_ordenado[i]]
                     cambios++
