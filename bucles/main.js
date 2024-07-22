@@ -204,10 +204,14 @@ function ejercicio13() {
         mano_jugador1 = prompt(`${nom_jugador1} ingresa tu mano`)
         mano_jugador2 = prompt(`${nom_jugador2} ingresa tu mano`)
 
-        if ((mano_jugador1 === "piedra" && mano_jugador2 === "tijera") || (mano_jugador1 === "papel" && mano_jugador2 === "piedra") || (mano_jugador1 === "tijera" && mano_jugador2 === "papel")) {
-            alert("Gana jugador 1")
-        } else if (mano_jugador1 === mano_jugador2) {
+        if (mano_jugador1 === mano_jugador2) {
             alert("Empate, jueguen otra mano")
+
+        } else if ((mano_jugador1 === "piedra" && mano_jugador2 === "tijera") ||
+                (mano_jugador1 === "papel" && mano_jugador2 === "piedra") || 
+                (mano_jugador1 === "tijera" && mano_jugador2 === "papel")) {
+            alert("Gana jugador 1")
+            
         } else {
             alert("Gana jugador 2")
         }
